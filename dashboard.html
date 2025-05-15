@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><title>Data Quality Dashboard</title></head>
+<body>
+  <h2>Upload Sensor Data</h2>
+  <form method="POST" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <input type="submit" value="Evaluate">
+  </form>
+
+  {% if results %}
+    <h3>Quality Metrics:</h3>
+    <ul>
+      <li>Completeness: {{ results.completeness }}</li>
+      <li>Consistency: {{ results.consistency }}</li>
+      <li>Quality Score: {{ results.quality_score }}</li>
+    </ul>
+  {% endif %}
+</body>
+</html>
